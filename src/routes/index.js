@@ -3,12 +3,15 @@ import VueRouter from "vue-router";
 import NewsView from "../views/NewsView.vue";
 import AskView from "../views/AskView.vue";
 import JobsView from "../views/JobsView.vue";
+import UserView from "../views/UserView.vue";
+import ItemsView from "../views/ItemsView.vue";
 
 // Vue 애플리케이션이 Vue Router를 전역으로 사용할 수 있도록 설치
 Vue.use(VueRouter);
 
 // router 세팅(?)
 export const router = new VueRouter({
+    mode: "history", // 표시되는 url => root/#/ 형식을 없애줌
     routes: [
         {
             path: "/",
@@ -25,6 +28,14 @@ export const router = new VueRouter({
         {
             path: "/jobs",
             component: JobsView,
+        },
+        {
+            path: "/user",
+            component: UserView,
+        },
+        {
+            path: "/items",
+            component: ItemsView,
         },
     ],
 });

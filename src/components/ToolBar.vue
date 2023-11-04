@@ -18,11 +18,20 @@ header {
     color: white;
     font-size: 20px;
     display: flex;
-    padding: 25px;
+    padding: 20px;
 }
 
-.divideLine {
+header span {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+header a {
+    color: white;
+    text-decoration: unset;
+}
+
+header .router-link-exact-active {
+    color: #35495e;
 }
 </style>

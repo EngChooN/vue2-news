@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <ToolBar />
-        <router-view></router-view>
+        <router-view class="mainView"></router-view>
     </div>
 </template>
 
@@ -18,6 +18,10 @@ export default {
 
 <style>
 body {
-    margin: 0px;
+    margin: 0;
+    padding: 0;
+}
+.mainView {
+    padding: 10px 20px 10px 20px;
 }
 </style>
