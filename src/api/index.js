@@ -18,3 +18,11 @@ export const fetchJobsList = () => {
 export const fetchAskList = () => {
     return axios.get(config.baseUrl + "ask/1.json");
 };
+// 유저 정보 api
+export const fetchUserInfo = (userId) => {
+    return axios.get(`${config.baseUrl}user/${userId}.json`);
+};
+// 아이템(ask) 정보 api
+export const fetchAskItem = (itemId) => {
+    return axios.get(`${config.baseUrl}item/${itemId}/json`);
+};

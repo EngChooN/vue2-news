@@ -1,7 +1,9 @@
 <template>
     <div id="app">
         <ToolBar />
-        <router-view class="mainView"></router-view>
+        <transition name="page">
+            <router-view class="main-container"></router-view>
+        </transition>
     </div>
 </template>
 
@@ -21,7 +23,16 @@ body {
     margin: 0;
     padding: 0;
 }
-.mainView {
+.main-container {
     padding: 10px 20px 10px 20px;
+}
+.page-enter-active,
+.page-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+    opacity: 0;
 }
 </style>
