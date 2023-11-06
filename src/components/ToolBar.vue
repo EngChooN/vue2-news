@@ -33,5 +33,6 @@ header a {
 
 header .router-link-exact-active {
     color: #35495e;
+    text-decoration: underline;
 }
 </style>
