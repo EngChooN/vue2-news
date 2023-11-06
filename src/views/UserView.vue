@@ -1,15 +1,19 @@
 <template>
-    <section>
-        <p>name: {{ this.userInfo.id }}</p>
-        <p>karma: {{ this.userInfo.karma }}</p>
-        <p>created: {{ this.userInfo.created }}</p>
-    </section>
+    <UserProfile>
+        <div slot="name">{{ this.userInfo.id }}</div>
+        <template slot="time">{{ this.userInfo.created }}</template>
+        <div slot="karma">{{ this.userInfo.karma }}</div>
+    </UserProfile>
 </template>
 
 <script>
+import UserProfile from "@/components/UserProfile.vue";
 import { mapState } from "vuex";
 
 export default {
+    components: {
+        UserProfile,
+    },
     computed: {
         ...mapState(["userInfo"]),
     },

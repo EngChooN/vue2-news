@@ -1,25 +1,28 @@
 <template>
     <div>
-        <!-- 질문 상세 정보 -->
-        <section>
-            <div class="user-container">
-                <div><i class="fa-solid fa-user"></i></div>
-                <div class="user-description">
-                    <router-link :to="`/user/${this.itemInfo.user}`">{{
-                        this.itemInfo.user
-                    }}</router-link>
-                    <div class="time">{{ this.itemInfo.time_ago }}</div>
-                </div>
+        <!-- 사용자 정보 -->
+        <UserProfile>
+            <div slot="name">
+                <router-link :to="`/user/${this.itemInfo.user}`">{{
+                    this.itemInfo.user
+                }}</router-link>
             </div>
-            <h2>{{ this.itemInfo.title }}</h2>
-        </section>
+            <template slot="time">{{ this.itemInfo.time_ago }}</template>
+        </UserProfile>
+        <h2>{{ this.itemInfo.title }}</h2>
         <!-- 질문 댓글 -->
+        <div v-html="this.itemInfo.content"></div>
     </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import UserProfile from "@/components/UserProfile.vue";
+
 export default {
+    components: {
+        UserProfile,
+    },
     computed: {
         ...mapState(["itemInfo"]),
     },
