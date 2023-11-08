@@ -12,6 +12,7 @@ export default {
             .then((res) => {
                 console.log("NEWS", res.data);
                 context.commit("SET_NEWS", res.data);
+                return res;
             })
             .catch((err) => {
                 console.error(err);
@@ -22,6 +23,7 @@ export default {
             .then((res) => {
                 console.log("ASK", res.data);
                 commit("SET_ASK", res.data);
+                return res;
             })
             .catch((err) => {
                 console.error(err);
@@ -32,6 +34,7 @@ export default {
             .then((res) => {
                 console.log("JOBS", res.data);
                 commit("SET_JOBS", res.data);
+                return res;
             })
             .catch((err) => {
                 console.error(err);

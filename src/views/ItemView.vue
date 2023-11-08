@@ -7,7 +7,9 @@
                     this.itemInfo.user
                 }}</router-link>
             </div>
-            <template slot="time">{{ this.itemInfo.time_ago }}</template>
+            <span slot="time">
+                {{ "Posted, " + this.itemInfo.time_ago }}
+            </span>
         </UserProfile>
         <h2>{{ this.itemInfo.title }}</h2>
         <!-- 질문 댓글 -->

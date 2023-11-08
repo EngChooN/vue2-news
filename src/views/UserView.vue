@@ -1,8 +1,10 @@
 <template>
     <UserProfile>
         <div slot="name">{{ this.userInfo.id }}</div>
-        <template slot="time">{{ this.userInfo.created }}</template>
-        <div slot="karma">{{ this.userInfo.karma }}</div>
+        <span slot="time">
+            {{ "Joined " + this.userInfo.created + ", " }}
+            {{ this.userInfo.karma }}
+        </span>
     </UserProfile>
 </template>
 

@@ -52,12 +52,12 @@ export default {
             return this.$store.state[name];
         },
     },
-    created() {
-        const name = this.$route.name;
-        const dispatchName = "FETCH_" + name.toUpperCase(); // ex) "FETCH_NEWS"
+    // created() {
+    //     const name = this.$route.name;
+    //     const dispatchName = "FETCH_" + name.toUpperCase(); // ex) "FETCH_NEWS"
 
-        this.$store.dispatch(dispatchName);
-    },
+    //     this.$store.dispatch(dispatchName);
+    // },
 };
 </script>
 
