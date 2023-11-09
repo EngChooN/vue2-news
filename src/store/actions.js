@@ -1,40 +1,51 @@
 import {
-    fetchNewsList,
-    fetchAskList,
-    fetchJobsList,
+    // fetchNewsList,
+    // fetchAskList,
+    // fetchJobsList,
+    fetchList,
     fetchUserInfo,
     fetchAskItem,
 } from "../api/index";
 
 export default {
-    FETCH_NEWS(context) {
-        fetchNewsList()
+    // FETCH_NEWS(context) {
+    //     fetchNewsList()
+    //         .then((res) => {
+    //             console.log("NEWS", res.data);
+    //             context.commit("SET_NEWS", res.data);
+    //             return res;
+    //         })
+    //         .catch((err) => {
+    //             console.error(err);
+    //         });
+    // },
+    // FETCH_ASK({ commit }) {
+    //     fetchAskList()
+    //         .then((res) => {
+    //             console.log("ASK", res.data);
+    //             commit("SET_ASK", res.data);
+    //             return res;
+    //         })
+    //         .catch((err) => {
+    //             console.error(err);
+    //         });
+    // },
+    // FETCH_JOBS({ commit }) {
+    //     fetchJobsList()
+    //         .then((res) => {
+    //             console.log("JOBS", res.data);
+    //             commit("SET_JOBS", res.data);
+    //             return res;
+    //         })
+    //         .catch((err) => {
+    //             console.error(err);
+    //         });
+    // },
+    FETCH_LIST({ commit }, pageName) {
+        fetchList(pageName)
             .then((res) => {
-                console.log("NEWS", res.data);
-                context.commit("SET_NEWS", res.data);
-                return res;
-            })
-            .catch((err) => {
-                console.error(err);
-            });
-    },
-    FETCH_ASK({ commit }) {
-        fetchAskList()
-            .then((res) => {
-                console.log("ASK", res.data);
-                commit("SET_ASK", res.data);
-                return res;
-            })
-            .catch((err) => {
-                console.error(err);
-            });
-    },
-    FETCH_JOBS({ commit }) {
-        fetchJobsList()
-            .then((res) => {
-                console.log("JOBS", res.data);
-                commit("SET_JOBS", res.data);
-                return res;
+                console.log("HOC: " + pageName, res.data);
+                commit("SET_LIST", res.data);
             })
             .catch((err) => {
                 console.error(err);

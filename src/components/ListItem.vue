@@ -48,16 +48,9 @@
 export default {
     computed: {
         listItems() {
-            const name = this.$route.name;
-            return this.$store.state[name];
+            return this.$store.state.list;
         },
     },
-    // created() {
-    //     const name = this.$route.name;
-    //     const dispatchName = "FETCH_" + name.toUpperCase(); // ex) "FETCH_NEWS"
-
-    //     this.$store.dispatch(dispatchName);
-    // },
 };
 </script>
 
