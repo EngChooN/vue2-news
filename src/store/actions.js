@@ -42,7 +42,7 @@ export default {
     //         });
     // },
     FETCH_LIST({ commit }, pageName) {
-        fetchList(pageName)
+        return fetchList(pageName)
             .then((res) => {
                 console.log("HOC: " + pageName, res.data);
                 commit("SET_LIST", res.data);
