@@ -13,5 +13,3 @@ export default {
     mixins: [ListMixin],
 };
 </script>
-
-<style scoped></style>

@@ -46,6 +46,7 @@ export default {
             .then((res) => {
                 console.log("HOC: " + pageName, res.data);
                 commit("SET_LIST", res.data);
+                return res;
             })
             .catch((err) => {
                 console.error(err);

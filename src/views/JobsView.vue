@@ -1,5 +1,5 @@
 <template>
-    <ListItem></ListItem>
+    <ListItem />
 </template>
 
 <script>
@@ -13,5 +13,3 @@ export default {
     mixins: [ListMixin],
 };
 </script>
-
-<style scoped></style>

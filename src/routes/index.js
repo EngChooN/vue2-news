@@ -3,6 +3,9 @@ import VueRouter from "vue-router";
 import UserView from "../views/UserView.vue";
 import ItemsView from "../views/ItemView.vue";
 import createListView from "@/views/CreateListView";
+import NewsView from "@/views/NewsView.vue";
+import AskView from "@/views/AskView.vue";
+import JobsView from "@/views/JobsView.vue";
 
 // Vue 애플리케이션이 Vue Router를 전역으로 사용할 수 있도록 설치
 Vue.use(VueRouter);
@@ -18,17 +21,20 @@ export const router = new VueRouter({
         {
             path: "/news", // 주소
             name: "news",
-            component: createListView("NewsView"), // HOC
+            // component: createListView("NewsView"), // HOC
+            component: NewsView,
         },
         {
             path: "/ask",
             name: "ask",
-            component: createListView("AskView"),
+            // component: createListView("AskView"),
+            component: AskView,
         },
         {
             path: "/jobs",
             name: "jobs",
-            component: createListView("JobsView"),
+            // component: createListView("JobsView"),
+            component: JobsView,
         },
         {
             path: "/user/:id",
