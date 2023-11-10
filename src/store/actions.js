@@ -41,35 +41,59 @@ export default {
     //             console.error(err);
     //         });
     // },
-    FETCH_LIST({ commit }, pageName) {
-        return fetchList(pageName)
-            .then((res) => {
-                console.log("HOC: " + pageName, res.data);
-                commit("SET_LIST", res.data);
-                return res;
-            })
-            .catch((err) => {
-                console.error(err);
-            });
+    async FETCH_LIST({ commit }, pageName) {
+        // no async then
+        // return fetchList(pageName)
+        //     .then((res) => {
+        //         console.log("HOC: " + pageName, res.data);
+        //         commit("SET_LIST", res.data);
+        //         return res;
+        //     })
+        //     .catch((err) => {
+        //         console.error(err);
+        //     });
+
+        // no then async
+        try {
+            const res = await fetchList(pageName);
+            commit("SET_LIST", res.data);
+            return res;
+        } catch (err) {
+            console.error(err);
+        }
     },
-    FETCH_USER({ commit }, userId) {
-        fetchUserInfo(userId)
-            .then((res) => {
-                console.log("USERINFO", res.data);
-                commit("SET_USER", res.data);
-            })
-            .catch((err) => {
-                console.error(err);
-            });
+    async FETCH_USER({ commit }, userId) {
+        // fetchUserInfo(userId)
+        //     .then((res) => {
+        //         console.log("USERINFO", res.data);
+        //         commit("SET_USER", res.data);
+        //     })
+        //     .catch((err) => {
+        //         console.error(err);
+        //     });
+
+        try {
+            const res = await fetchUserInfo(userId);
+            commit("SET_USER", res.data);
+        } catch (err) {
+            console.error(err);
+        }
     },
-    FETCH_ITEM({ commit }, itemId) {
-        fetchAskItem(itemId)
-            .then((res) => {
-                console.log("ASKITEM", res.data);
-                commit("SET_ITEM", res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+    async FETCH_ITEM({ commit }, itemId) {
+        // fetchAskItem(itemId)
+        //     .then((res) => {
+        //         console.log("ASKITEM", res.data);
+        //         commit("SET_ITEM", res.data);
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     });
+
+        try {
+            const res = await fetchAskItem(itemId);
+            commit("SET_ITEM", res.data);
+        } catch (err) {
+            console.error(err);
+        }
     },
 };

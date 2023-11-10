@@ -18,8 +18,12 @@ const config = {
 // export const fetchAskList = () => {
 //     return axios.get(config.baseUrl + "ask/1.json");
 // };
-export const fetchList = (pageName) => {
-    return axios.get(`${config.baseUrl}${pageName}/1.json`);
+export const fetchList = async (pageName) => {
+    try {
+        return await axios.get(`${config.baseUrl}${pageName}/1.json`);
+    } catch (err) {
+        console.error(err);
+    }
 };
 // 유저 정보 api
 export const fetchUserInfo = (userId) => {
